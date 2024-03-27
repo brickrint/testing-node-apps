@@ -19,7 +19,7 @@ describe('when incorrect password provided', () => {
     const res = isPasswordAllowed(password);
     expect(res).toBe(false);
   });
-})
+});
 
 // 🐨 write tests for valid and invalid passwords
 // 💰 here are some you can use:
