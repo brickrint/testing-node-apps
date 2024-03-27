@@ -91,7 +91,7 @@ import cases from 'jest-in-case'
 
 cases(
   'add',
-  opts => {
+  (opts) => {
     const result = add(opts.a, opts.b)
     expect(result).toBe(opts.result)
   },

@@ -43,7 +43,7 @@ if (isCI) {
     }
 
     replace(options).then(
-      changedFiles => {
+      (changedFiles) => {
         console.log(`Updated ${changedFiles.length} with the email ${email}`)
         console.log(
           'committing changes for you so your jest watch mode works nicely',
@@ -52,7 +52,7 @@ if (isCI) {
           stdio: 'inherit',
         })
       },
-      error => {
+      (error) => {
         console.error('Failed to update files')
         console.error(error.stack)
       },

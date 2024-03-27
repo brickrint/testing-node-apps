@@ -1,4 +1,4 @@
-const getData = res => res.data
+const getData = (res) => res.data
 const handleRequestFailure = ({response: {status, data}}) => {
   const error = new Error(`${status}: ${JSON.stringify(data)}`)
   // remove parts of the stack trace so the error message (codeframe) shows up
@@ -6,7 +6,7 @@ const handleRequestFailure = ({response: {status, data}}) => {
   error.stack = error.stack
     .split('\n')
     .filter(
-      line =>
+      (line) =>
         !line.includes('at handleRequestFailure') &&
         !line.includes('at processTicksAndRejections'),
     )
@@ -16,6 +16,6 @@ const handleRequestFailure = ({response: {status, data}}) => {
   return Promise.reject(error)
 }
 
-const resolve = e => e
+const resolve = (e) => e
 
 export {getData, handleRequestFailure, resolve}

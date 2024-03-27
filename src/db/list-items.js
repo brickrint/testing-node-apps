@@ -46,7 +46,7 @@ async function update(listItemId, updates) {
 }
 
 async function remove(id) {
-  listItems = listItems.filter(li => li.id !== id)
+  listItems = listItems.filter((li) => li.id !== id)
 }
 
 async function insertMany(manyListItems) {

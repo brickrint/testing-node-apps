@@ -9,7 +9,7 @@ async function initDb({
   books = Array.from({length: 100}, () => generate.buildBook()),
   users = Array.from({length: 10}, () => generate.buildUser()),
   listItems = _.flatten(
-    users.map(u =>
+    users.map((u) =>
       Array.from({length: Math.floor(Math.random() * 4)}, () =>
         generate.buildListItem({ownerId: u.id, bookId: random(books).id}),
       ),

@@ -11,7 +11,7 @@ async function readById(id) {
 }
 
 async function readManyById(ids) {
-  return _.filter(books, b => ids.includes(b.id))
+  return _.filter(books, (b) => ids.includes(b.id))
 }
 
 async function insertMany(manyBooks) {
