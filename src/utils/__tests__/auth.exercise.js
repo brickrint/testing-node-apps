@@ -1,10 +1,25 @@
-// Testing Pure Functions
+import { isPasswordAllowed } from '../auth';
 
-// 💣 remove this todo test (it's only here so you don't get an error about missing tests)
-test.todo('remove me')
+test('when valid password provided', () => {
+  const res = isPasswordAllowed('!aBc123');
+  expect(res).toBe(true);
+});
 
-// 🐨 import the function that we're testing
-// 💰 import {isPasswordAllowed} from '../auth'
+describe('when incorrect password provided', () => {
+  const incorrectPasswords = [
+    "a2c!",
+    "123456!",
+    "ABCdef!",
+    "abc123!",
+    "ABC123!",
+    "ABCdef123"
+  ];
+
+  test.each(incorrectPasswords)('when password is %s', (password) => {
+    const res = isPasswordAllowed(password);
+    expect(res).toBe(false);
+  });
+})
 
 // 🐨 write tests for valid and invalid passwords
 // 💰 here are some you can use:
