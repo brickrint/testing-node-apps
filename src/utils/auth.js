@@ -74,7 +74,7 @@ function isPasswordAllowed(password) {
   return (
     password.length > 6 &&
     // non-alphanumeric
-    // /\W/.test(password) &&
+    /\W/.test(password) &&
     // digit
     /\d/.test(password) &&
     // capital letter
